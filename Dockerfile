@@ -12,6 +12,7 @@ RUN go build -o main .
 
 FROM scratch
 COPY --from=builder /app/main .
+COPY --from=builder /app/.env .
 
 EXPOSE 3000
 
